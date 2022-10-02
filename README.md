@@ -2,7 +2,8 @@
 
 
  - ```train.py``` script to use a ML clustering model using word2Vec
- 
+ - @TODO ```predict.py``` script to predict cluster for unseen instance wrapped in Flask API
+
  
 ## API Definition for Prediction
 
