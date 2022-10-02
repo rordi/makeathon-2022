@@ -11,11 +11,11 @@ from nltk.corpus import stopwords
 def make_prediction(data):
     # read the new publication abstract
     # df = pd.read_json('test.json')
+    text_columns = ["title", "abstract"]
 
-    df = pd.DataFrame.from_dict(data, orient="index")
+    df = pd.DataFrame.from_dict(data, orient="index", columns=text_columns)
 
     custom_stopwords = set(stopwords.words("english") + ["news", "new", "top"])
-    text_columns = ["title", "abstract"]
 
     for col in text_columns:
         df[col] = df[col].astype(str)
