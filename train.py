@@ -1,6 +1,6 @@
 # adapted from https://dylancastillo.co/nlp-snippets-cluster-documents-using-word2vec/#clean-and-tokenize-data
 
-FILE = './combined_deduplicated_test.csv'
+FILE = './combined_deduplicated.csv'
 PICKLE = 'results_model.pkl'
 PICKLE_W2V = 'results_w2v_model.pkl'
 CLUSTERDATA = 'results_clusters.csv'
@@ -77,7 +77,7 @@ dump(model, PICKLE_W2V)
 
 
 log('Vectorizing documents...')
-vectorized_docs = vectorize(tokenized_docs, model=model)
+vectorized_docs = preprocess.vectorize(tokenized_docs, model=model)
 
 def mbkmeans_clusters(
     X,
