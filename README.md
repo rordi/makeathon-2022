@@ -16,7 +16,7 @@
 ```
 {
     "title":"Lorem ipsum",
-    "abstract":"Pellentesque congue ligula orci, nec iaculis lacus egestas quis. Nullam ut est cursus, porttitor libero eget, faucibus mi. Etiam et blandit felis, at convallis tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nunc bibendum sem eget eros condimentum auctor. Aliquam sodales commodo turpis malesuada pretium. Donec sagittis ex id congue cursus. Etiam tempus lacus a augue tincidunt consequat. Nunc vestibulum condimentum sapien, et dapibus purus dapibus nec. Nam sagittis, sapien quis iaculis sagittis, arcu diam semper lectus, nec fermentum libero ligula vel tellus. Cras scelerisque tempus enim vel sodales."
+    "abstract":"Pellentesque congue ligula orci, nec iaculis lacus egestas quis. Nullam ut est cursus, porttitor libero eget, faucibus mi."
 }
 ```
 
