@@ -26,8 +26,21 @@ The API returns the predicted cluster number (integer) and if possible a score (
 
 ```
 {
-    "cluster":123
-    "score":0.65
+    "cluster":123,
+    "score":0.65,
+    "authors": [
+        {
+            "iri": "http://semopenalex/author/1234",
+            "name": "Firstname Lastname",
+            "orcid": "1234-1234-5678-0987"
+        },
+        { 
+            "iri": "http://semopenalex/author/5421",
+            "name": "Ipsum Lorum",
+            "orcid": "8765-6543-6789-5438"
+        },
+        ...
+    ]
 }
 ```
 
