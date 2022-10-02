@@ -1,0 +1,687 @@
+❯ python3 train.py
+2022-10-02 05:17:15 Downloading nltk dependencies...
+[nltk_data] Downloading package punkt to /Users/didi/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package stopwords to /Users/didi/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+2022-10-02 05:17:15 Setting random seeds...
+2022-10-02 05:17:15 Reading CSV file...
+2022-10-02 05:17:22 Preparing dataframe with tokenized docs...
+2022-10-02 05:26:39 Original dataframe: (609389, 3)
+2022-10-02 05:26:39 Pre-processed dataframe: (609389, 5)
+2022-10-02 05:26:39 Pre-processed dataframe head:
+                                        pub  ...                                             tokens
+0  https://semopenalex.org/work/W2083927153  ...  [cancer, imaging, archive, tcia, maintaining, ...
+1  https://semopenalex.org/work/W2014980529  ...  [review, internet, health, information, qualit...
+2  https://semopenalex.org/work/W2152560313  ...  [impact, electronic, health, records, time, ef...
+3  https://semopenalex.org/work/W2030677354  ...  [health, everybody, talks, health, days, peopl...
+4  https://semopenalex.org/work/W2009069410  ...  [beyond, epr, complementary, roles, hospital, ...
+
+[5 rows x 5 columns]
+2022-10-02 05:26:39 Applying Word2Vec model...
+2022-10-02 05:36:27 Vectorizing documents...
+2022-10-02 05:39:00 For n_clusters = 600
+2022-10-02 07:04:15 Silhouette coefficient: 0.03
+2022-10-02 07:04:15 Inertia:6565523.1348253
+2022-10-02 08:25:51 Silhouette values:
+    Cluster 49: Size:341 | Avg:0.32 | Min:-0.02 | Max: 0.49
+    Cluster 304: Size:465 | Avg:0.28 | Min:0.01 | Max: 0.43
+    Cluster 311: Size:584 | Avg:0.24 | Min:0.02 | Max: 0.41
+    Cluster 588: Size:1408 | Avg:0.18 | Min:-0.01 | Max: 0.35
+    Cluster 425: Size:296 | Avg:0.16 | Min:-0.09 | Max: 0.39
+    Cluster 186: Size:236 | Avg:0.15 | Min:-0.12 | Max: 0.37
+    Cluster 276: Size:404 | Avg:0.13 | Min:0.01 | Max: 0.27
+    Cluster 577: Size:504 | Avg:0.12 | Min:-0.02 | Max: 0.27
+    Cluster 263: Size:499 | Avg:0.12 | Min:-0.09 | Max: 0.26
+    Cluster 117: Size:1527 | Avg:0.12 | Min:-0.02 | Max: 0.26
+    Cluster 412: Size:1663 | Avg:0.11 | Min:-0.00 | Max: 0.27
+    Cluster 100: Size:305 | Avg:0.11 | Min:-0.01 | Max: 0.26
+    Cluster 21: Size:786 | Avg:0.11 | Min:-0.02 | Max: 0.28
+    Cluster 537: Size:840 | Avg:0.10 | Min:-0.02 | Max: 0.29
+    Cluster 170: Size:400 | Avg:0.10 | Min:-0.10 | Max: 0.40
+    Cluster 228: Size:758 | Avg:0.10 | Min:-0.01 | Max: 0.24
+    Cluster 410: Size:1644 | Avg:0.10 | Min:-0.01 | Max: 0.24
+    Cluster 3: Size:1157 | Avg:0.09 | Min:-0.03 | Max: 0.25
+    Cluster 215: Size:422 | Avg:0.09 | Min:-0.03 | Max: 0.27
+    Cluster 579: Size:1084 | Avg:0.09 | Min:-0.00 | Max: 0.24
+    Cluster 86: Size:865 | Avg:0.09 | Min:-0.03 | Max: 0.25
+    Cluster 505: Size:679 | Avg:0.09 | Min:-0.02 | Max: 0.24
+    Cluster 287: Size:1349 | Avg:0.08 | Min:-0.01 | Max: 0.22
+    Cluster 40: Size:2984 | Avg:0.08 | Min:0.00 | Max: 0.21
+    Cluster 10: Size:1366 | Avg:0.08 | Min:-0.04 | Max: 0.22
+    Cluster 578: Size:1960 | Avg:0.08 | Min:-0.01 | Max: 0.20
+    Cluster 396: Size:991 | Avg:0.08 | Min:-0.02 | Max: 0.23
+    Cluster 43: Size:739 | Avg:0.08 | Min:-0.17 | Max: 0.26
+    Cluster 115: Size:877 | Avg:0.08 | Min:-0.03 | Max: 0.24
+    Cluster 388: Size:1143 | Avg:0.08 | Min:-0.03 | Max: 0.23
+    Cluster 244: Size:715 | Avg:0.08 | Min:-0.02 | Max: 0.22
+    Cluster 158: Size:1195 | Avg:0.08 | Min:-0.01 | Max: 0.21
+    Cluster 238: Size:664 | Avg:0.08 | Min:-0.04 | Max: 0.23
+    Cluster 162: Size:791 | Avg:0.08 | Min:-0.00 | Max: 0.21
+    Cluster 75: Size:2046 | Avg:0.07 | Min:-0.00 | Max: 0.22
+    Cluster 153: Size:990 | Avg:0.07 | Min:-0.02 | Max: 0.21
+    Cluster 462: Size:1245 | Avg:0.07 | Min:-0.03 | Max: 0.23
+    Cluster 331: Size:726 | Avg:0.07 | Min:-0.02 | Max: 0.21
+    Cluster 417: Size:1271 | Avg:0.07 | Min:-0.02 | Max: 0.21
+    Cluster 350: Size:1111 | Avg:0.07 | Min:-0.00 | Max: 0.22
+    Cluster 414: Size:1048 | Avg:0.07 | Min:-0.00 | Max: 0.21
+    Cluster 298: Size:494 | Avg:0.07 | Min:-0.05 | Max: 0.23
+    Cluster 50: Size:1835 | Avg:0.07 | Min:-0.00 | Max: 0.21
+    Cluster 26: Size:784 | Avg:0.07 | Min:-0.04 | Max: 0.23
+    Cluster 526: Size:1481 | Avg:0.07 | Min:-0.04 | Max: 0.24
+    Cluster 154: Size:1436 | Avg:0.07 | Min:-0.03 | Max: 0.22
+    Cluster 418: Size:645 | Avg:0.07 | Min:-0.07 | Max: 0.24
+    Cluster 74: Size:854 | Avg:0.07 | Min:-0.01 | Max: 0.20
+    Cluster 68: Size:789 | Avg:0.07 | Min:-0.04 | Max: 0.21
+    Cluster 420: Size:1546 | Avg:0.07 | Min:-0.03 | Max: 0.23
+    Cluster 378: Size:744 | Avg:0.07 | Min:-0.03 | Max: 0.20
+    Cluster 317: Size:1267 | Avg:0.06 | Min:-0.02 | Max: 0.22
+    Cluster 441: Size:1663 | Avg:0.06 | Min:-0.04 | Max: 0.22
+    Cluster 297: Size:1371 | Avg:0.06 | Min:-0.02 | Max: 0.24
+    Cluster 187: Size:819 | Avg:0.06 | Min:-0.03 | Max: 0.22
+    Cluster 281: Size:557 | Avg:0.06 | Min:-0.05 | Max: 0.26
+    Cluster 60: Size:1494 | Avg:0.06 | Min:-0.05 | Max: 0.24
+    Cluster 346: Size:1006 | Avg:0.06 | Min:-0.05 | Max: 0.24
+    Cluster 379: Size:1616 | Avg:0.06 | Min:-0.01 | Max: 0.18
+    Cluster 536: Size:751 | Avg:0.06 | Min:-0.03 | Max: 0.22
+    Cluster 557: Size:1296 | Avg:0.06 | Min:-0.01 | Max: 0.19
+    Cluster 416: Size:1013 | Avg:0.06 | Min:-0.05 | Max: 0.21
+    Cluster 498: Size:262 | Avg:0.06 | Min:-0.03 | Max: 0.24
+    Cluster 411: Size:644 | Avg:0.06 | Min:-0.04 | Max: 0.21
+    Cluster 172: Size:1080 | Avg:0.06 | Min:-0.05 | Max: 0.22
+    Cluster 595: Size:1909 | Avg:0.06 | Min:-0.04 | Max: 0.17
+    Cluster 335: Size:1629 | Avg:0.06 | Min:-0.00 | Max: 0.16
+    Cluster 89: Size:2072 | Avg:0.06 | Min:-0.00 | Max: 0.17
+    Cluster 207: Size:1454 | Avg:0.06 | Min:-0.01 | Max: 0.21
+    Cluster 468: Size:1322 | Avg:0.06 | Min:-0.01 | Max: 0.21
+    Cluster 456: Size:1503 | Avg:0.06 | Min:-0.04 | Max: 0.21
+    Cluster 314: Size:635 | Avg:0.06 | Min:-0.03 | Max: 0.18
+    Cluster 82: Size:1599 | Avg:0.06 | Min:-0.02 | Max: 0.19
+    Cluster 370: Size:1160 | Avg:0.06 | Min:-0.02 | Max: 0.19
+    Cluster 501: Size:1482 | Avg:0.06 | Min:-0.05 | Max: 0.18
+    Cluster 431: Size:744 | Avg:0.06 | Min:-0.05 | Max: 0.20
+    Cluster 502: Size:894 | Avg:0.06 | Min:-0.03 | Max: 0.16
+    Cluster 137: Size:758 | Avg:0.06 | Min:-0.02 | Max: 0.20
+    Cluster 73: Size:1337 | Avg:0.06 | Min:-0.08 | Max: 0.23
+    Cluster 227: Size:595 | Avg:0.06 | Min:-0.03 | Max: 0.22
+    Cluster 466: Size:551 | Avg:0.06 | Min:-0.05 | Max: 0.24
+    Cluster 42: Size:1913 | Avg:0.06 | Min:-0.03 | Max: 0.21
+    Cluster 478: Size:1915 | Avg:0.06 | Min:-0.01 | Max: 0.18
+    Cluster 553: Size:1055 | Avg:0.06 | Min:-0.03 | Max: 0.22
+    Cluster 273: Size:1245 | Avg:0.06 | Min:-0.04 | Max: 0.21
+    Cluster 341: Size:1162 | Avg:0.06 | Min:-0.02 | Max: 0.22
+    Cluster 457: Size:1101 | Avg:0.06 | Min:-0.02 | Max: 0.16
+    Cluster 184: Size:1840 | Avg:0.06 | Min:-0.04 | Max: 0.21
+    Cluster 319: Size:1587 | Avg:0.06 | Min:-0.02 | Max: 0.17
+    Cluster 264: Size:1361 | Avg:0.05 | Min:-0.05 | Max: 0.23
+    Cluster 24: Size:854 | Avg:0.05 | Min:-0.06 | Max: 0.23
+    Cluster 359: Size:950 | Avg:0.05 | Min:-0.05 | Max: 0.23
+    Cluster 52: Size:1263 | Avg:0.05 | Min:-0.01 | Max: 0.19
+    Cluster 246: Size:943 | Avg:0.05 | Min:-0.06 | Max: 0.20
+    Cluster 165: Size:1289 | Avg:0.05 | Min:-0.04 | Max: 0.19
+    Cluster 204: Size:1586 | Avg:0.05 | Min:-0.01 | Max: 0.17
+    Cluster 34: Size:1600 | Avg:0.05 | Min:-0.04 | Max: 0.22
+    Cluster 173: Size:163 | Avg:0.05 | Min:-0.21 | Max: 0.30
+    Cluster 300: Size:1431 | Avg:0.05 | Min:-0.04 | Max: 0.17
+    Cluster 192: Size:1073 | Avg:0.05 | Min:-0.08 | Max: 0.21
+    Cluster 155: Size:1561 | Avg:0.05 | Min:-0.03 | Max: 0.20
+    Cluster 51: Size:922 | Avg:0.05 | Min:-0.06 | Max: 0.22
+    Cluster 142: Size:1598 | Avg:0.05 | Min:-0.05 | Max: 0.16
+    Cluster 454: Size:2411 | Avg:0.05 | Min:-0.03 | Max: 0.18
+    Cluster 17: Size:1321 | Avg:0.05 | Min:-0.03 | Max: 0.18
+    Cluster 337: Size:948 | Avg:0.05 | Min:-0.05 | Max: 0.18
+    Cluster 251: Size:1507 | Avg:0.05 | Min:-0.06 | Max: 0.21
+    Cluster 548: Size:1746 | Avg:0.05 | Min:-0.03 | Max: 0.19
+    Cluster 540: Size:1488 | Avg:0.05 | Min:-0.04 | Max: 0.20
+    Cluster 580: Size:1111 | Avg:0.05 | Min:-0.01 | Max: 0.16
+    Cluster 38: Size:1035 | Avg:0.05 | Min:-0.04 | Max: 0.20
+    Cluster 12: Size:1148 | Avg:0.05 | Min:-0.03 | Max: 0.18
+    Cluster 525: Size:1240 | Avg:0.05 | Min:-0.03 | Max: 0.19
+    Cluster 224: Size:1598 | Avg:0.05 | Min:-0.02 | Max: 0.18
+    Cluster 53: Size:1278 | Avg:0.05 | Min:-0.06 | Max: 0.17
+    Cluster 433: Size:1291 | Avg:0.05 | Min:-0.02 | Max: 0.20
+    Cluster 78: Size:1196 | Avg:0.05 | Min:-0.04 | Max: 0.22
+    Cluster 422: Size:1309 | Avg:0.05 | Min:-0.02 | Max: 0.16
+    Cluster 240: Size:1773 | Avg:0.05 | Min:-0.01 | Max: 0.15
+    Cluster 268: Size:1604 | Avg:0.05 | Min:-0.04 | Max: 0.16
+    Cluster 210: Size:1689 | Avg:0.05 | Min:-0.01 | Max: 0.16
+    Cluster 126: Size:1243 | Avg:0.05 | Min:-0.03 | Max: 0.18
+    Cluster 474: Size:1094 | Avg:0.05 | Min:-0.03 | Max: 0.19
+    Cluster 385: Size:1514 | Avg:0.05 | Min:-0.03 | Max: 0.19
+    Cluster 231: Size:1494 | Avg:0.05 | Min:-0.04 | Max: 0.16
+    Cluster 301: Size:767 | Avg:0.05 | Min:-0.04 | Max: 0.19
+    Cluster 160: Size:1379 | Avg:0.05 | Min:-0.01 | Max: 0.15
+    Cluster 486: Size:1710 | Avg:0.05 | Min:-0.02 | Max: 0.19
+    Cluster 289: Size:1202 | Avg:0.05 | Min:-0.04 | Max: 0.18
+    Cluster 569: Size:901 | Avg:0.05 | Min:-0.05 | Max: 0.21
+    Cluster 290: Size:1091 | Avg:0.05 | Min:-0.02 | Max: 0.19
+    Cluster 408: Size:1318 | Avg:0.05 | Min:-0.05 | Max: 0.17
+    Cluster 131: Size:1390 | Avg:0.05 | Min:-0.02 | Max: 0.20
+    Cluster 66: Size:1352 | Avg:0.05 | Min:-0.05 | Max: 0.19
+    Cluster 369: Size:1354 | Avg:0.05 | Min:-0.03 | Max: 0.17
+    Cluster 62: Size:1976 | Avg:0.05 | Min:-0.05 | Max: 0.22
+    Cluster 96: Size:1861 | Avg:0.05 | Min:-0.01 | Max: 0.17
+    Cluster 397: Size:1099 | Avg:0.05 | Min:-0.06 | Max: 0.21
+    Cluster 582: Size:901 | Avg:0.05 | Min:-0.03 | Max: 0.17
+    Cluster 494: Size:921 | Avg:0.05 | Min:-0.05 | Max: 0.20
+    Cluster 36: Size:1723 | Avg:0.05 | Min:-0.02 | Max: 0.17
+    Cluster 295: Size:1242 | Avg:0.05 | Min:-0.04 | Max: 0.18
+    Cluster 234: Size:2190 | Avg:0.05 | Min:-0.06 | Max: 0.20
+    Cluster 339: Size:1070 | Avg:0.05 | Min:-0.07 | Max: 0.19
+    Cluster 156: Size:1206 | Avg:0.05 | Min:-0.06 | Max: 0.20
+    Cluster 345: Size:1431 | Avg:0.05 | Min:-0.02 | Max: 0.15
+    Cluster 233: Size:1026 | Avg:0.05 | Min:-0.02 | Max: 0.17
+    Cluster 99: Size:592 | Avg:0.05 | Min:-0.05 | Max: 0.22
+    Cluster 362: Size:1107 | Avg:0.05 | Min:-0.05 | Max: 0.23
+    Cluster 255: Size:1706 | Avg:0.05 | Min:-0.01 | Max: 0.14
+    Cluster 181: Size:1203 | Avg:0.05 | Min:-0.03 | Max: 0.18
+    Cluster 283: Size:1135 | Avg:0.05 | Min:-0.02 | Max: 0.18
+    Cluster 401: Size:1500 | Avg:0.05 | Min:-0.07 | Max: 0.20
+    Cluster 61: Size:819 | Avg:0.05 | Min:-0.05 | Max: 0.19
+    Cluster 459: Size:1257 | Avg:0.05 | Min:-0.05 | Max: 0.18
+    Cluster 31: Size:1002 | Avg:0.05 | Min:-0.04 | Max: 0.19
+    Cluster 92: Size:628 | Avg:0.04 | Min:-0.04 | Max: 0.20
+    Cluster 130: Size:893 | Avg:0.04 | Min:-0.02 | Max: 0.17
+    Cluster 230: Size:1185 | Avg:0.04 | Min:-0.03 | Max: 0.18
+    Cluster 503: Size:939 | Avg:0.04 | Min:-0.02 | Max: 0.19
+    Cluster 313: Size:1473 | Avg:0.04 | Min:-0.07 | Max: 0.21
+    Cluster 191: Size:1074 | Avg:0.04 | Min:-0.05 | Max: 0.19
+    Cluster 69: Size:2229 | Avg:0.04 | Min:-0.04 | Max: 0.18
+    Cluster 440: Size:811 | Avg:0.04 | Min:-0.03 | Max: 0.17
+    Cluster 546: Size:1660 | Avg:0.04 | Min:-0.08 | Max: 0.19
+    Cluster 111: Size:1474 | Avg:0.04 | Min:-0.04 | Max: 0.16
+    Cluster 27: Size:1186 | Avg:0.04 | Min:-0.02 | Max: 0.14
+    Cluster 460: Size:1034 | Avg:0.04 | Min:-0.04 | Max: 0.15
+    Cluster 226: Size:1991 | Avg:0.04 | Min:-0.02 | Max: 0.15
+    Cluster 56: Size:1251 | Avg:0.04 | Min:-0.04 | Max: 0.16
+    Cluster 220: Size:2225 | Avg:0.04 | Min:-0.03 | Max: 0.15
+    Cluster 128: Size:2337 | Avg:0.04 | Min:-0.04 | Max: 0.18
+    Cluster 451: Size:1110 | Avg:0.04 | Min:-0.02 | Max: 0.15
+    Cluster 357: Size:1625 | Avg:0.04 | Min:-0.03 | Max: 0.15
+    Cluster 488: Size:1495 | Avg:0.04 | Min:-0.04 | Max: 0.17
+    Cluster 559: Size:1726 | Avg:0.04 | Min:-0.06 | Max: 0.18
+    Cluster 208: Size:1087 | Avg:0.04 | Min:-0.05 | Max: 0.18
+    Cluster 64: Size:792 | Avg:0.04 | Min:-0.06 | Max: 0.19
+    Cluster 196: Size:994 | Avg:0.04 | Min:-0.06 | Max: 0.18
+    Cluster 90: Size:1451 | Avg:0.04 | Min:-0.04 | Max: 0.18
+    Cluster 435: Size:830 | Avg:0.04 | Min:-0.05 | Max: 0.19
+    Cluster 183: Size:1629 | Avg:0.04 | Min:-0.06 | Max: 0.22
+    Cluster 400: Size:637 | Avg:0.04 | Min:-0.05 | Max: 0.19
+    Cluster 124: Size:1679 | Avg:0.04 | Min:-0.03 | Max: 0.15
+    Cluster 188: Size:764 | Avg:0.04 | Min:-0.03 | Max: 0.15
+    Cluster 132: Size:1178 | Avg:0.04 | Min:-0.05 | Max: 0.20
+    Cluster 382: Size:1750 | Avg:0.04 | Min:-0.07 | Max: 0.19
+    Cluster 14: Size:1156 | Avg:0.04 | Min:-0.01 | Max: 0.17
+    Cluster 294: Size:1073 | Avg:0.04 | Min:-0.03 | Max: 0.16
+    Cluster 547: Size:1261 | Avg:0.04 | Min:-0.03 | Max: 0.14
+    Cluster 464: Size:1382 | Avg:0.04 | Min:-0.04 | Max: 0.18
+    Cluster 145: Size:1000 | Avg:0.04 | Min:-0.04 | Max: 0.16
+    Cluster 285: Size:1251 | Avg:0.04 | Min:-0.08 | Max: 0.19
+    Cluster 527: Size:504 | Avg:0.04 | Min:-0.07 | Max: 0.23
+    Cluster 134: Size:1332 | Avg:0.04 | Min:-0.06 | Max: 0.20
+    Cluster 363: Size:2476 | Avg:0.04 | Min:-0.04 | Max: 0.17
+    Cluster 278: Size:1678 | Avg:0.04 | Min:-0.04 | Max: 0.18
+    Cluster 523: Size:1012 | Avg:0.04 | Min:-0.03 | Max: 0.16
+    Cluster 114: Size:1452 | Avg:0.04 | Min:-0.05 | Max: 0.16
+    Cluster 543: Size:304 | Avg:0.04 | Min:-0.16 | Max: 0.24
+    Cluster 534: Size:1554 | Avg:0.04 | Min:-0.03 | Max: 0.15
+    Cluster 29: Size:1032 | Avg:0.04 | Min:-0.03 | Max: 0.17
+    Cluster 72: Size:891 | Avg:0.04 | Min:-0.04 | Max: 0.17
+    Cluster 493: Size:1060 | Avg:0.04 | Min:-0.04 | Max: 0.19
+    Cluster 37: Size:1221 | Avg:0.04 | Min:-0.02 | Max: 0.16
+    Cluster 477: Size:534 | Avg:0.04 | Min:-0.02 | Max: 0.18
+    Cluster 23: Size:1548 | Avg:0.04 | Min:-0.02 | Max: 0.14
+    Cluster 330: Size:842 | Avg:0.04 | Min:-0.05 | Max: 0.15
+    Cluster 83: Size:1499 | Avg:0.04 | Min:-0.03 | Max: 0.16
+    Cluster 409: Size:1111 | Avg:0.04 | Min:-0.04 | Max: 0.17
+    Cluster 489: Size:1240 | Avg:0.04 | Min:-0.04 | Max: 0.14
+    Cluster 473: Size:1395 | Avg:0.04 | Min:-0.05 | Max: 0.16
+    Cluster 247: Size:1044 | Avg:0.04 | Min:-0.06 | Max: 0.14
+    Cluster 151: Size:1575 | Avg:0.04 | Min:-0.03 | Max: 0.13
+    Cluster 209: Size:1913 | Avg:0.04 | Min:-0.03 | Max: 0.16
+    Cluster 269: Size:1219 | Avg:0.04 | Min:-0.04 | Max: 0.16
+    Cluster 374: Size:1263 | Avg:0.04 | Min:-0.03 | Max: 0.14
+    Cluster 13: Size:1197 | Avg:0.04 | Min:-0.05 | Max: 0.18
+    Cluster 58: Size:1139 | Avg:0.04 | Min:-0.05 | Max: 0.17
+    Cluster 4: Size:1831 | Avg:0.04 | Min:-0.05 | Max: 0.17
+    Cluster 18: Size:1193 | Avg:0.04 | Min:-0.07 | Max: 0.21
+    Cluster 366: Size:974 | Avg:0.04 | Min:-0.06 | Max: 0.20
+    Cluster 303: Size:1068 | Avg:0.04 | Min:-0.06 | Max: 0.19
+    Cluster 203: Size:1291 | Avg:0.04 | Min:-0.03 | Max: 0.16
+    Cluster 6: Size:1865 | Avg:0.04 | Min:-0.07 | Max: 0.16
+    Cluster 121: Size:1328 | Avg:0.04 | Min:-0.04 | Max: 0.16
+    Cluster 424: Size:544 | Avg:0.04 | Min:-0.06 | Max: 0.18
+    Cluster 564: Size:1645 | Avg:0.04 | Min:-0.04 | Max: 0.19
+    Cluster 404: Size:932 | Avg:0.04 | Min:-0.06 | Max: 0.20
+    Cluster 348: Size:1108 | Avg:0.04 | Min:-0.05 | Max: 0.17
+    Cluster 461: Size:1072 | Avg:0.04 | Min:-0.07 | Max: 0.21
+    Cluster 15: Size:1768 | Avg:0.04 | Min:-0.03 | Max: 0.17
+    Cluster 141: Size:1174 | Avg:0.04 | Min:-0.04 | Max: 0.17
+    Cluster 436: Size:1014 | Avg:0.04 | Min:-0.05 | Max: 0.18
+    Cluster 7: Size:1391 | Avg:0.04 | Min:-0.02 | Max: 0.15
+    Cluster 390: Size:680 | Avg:0.04 | Min:-0.07 | Max: 0.19
+    Cluster 324: Size:1266 | Avg:0.04 | Min:-0.05 | Max: 0.18
+    Cluster 113: Size:983 | Avg:0.04 | Min:-0.05 | Max: 0.16
+    Cluster 510: Size:876 | Avg:0.04 | Min:-0.06 | Max: 0.16
+    Cluster 568: Size:1357 | Avg:0.03 | Min:-0.07 | Max: 0.18
+    Cluster 81: Size:824 | Avg:0.03 | Min:-0.03 | Max: 0.16
+    Cluster 467: Size:1329 | Avg:0.03 | Min:-0.04 | Max: 0.16
+    Cluster 352: Size:1166 | Avg:0.03 | Min:-0.05 | Max: 0.17
+    Cluster 372: Size:1275 | Avg:0.03 | Min:-0.04 | Max: 0.18
+    Cluster 447: Size:1237 | Avg:0.03 | Min:-0.03 | Max: 0.16
+    Cluster 217: Size:2196 | Avg:0.03 | Min:-0.06 | Max: 0.19
+    Cluster 560: Size:758 | Avg:0.03 | Min:-0.05 | Max: 0.19
+    Cluster 368: Size:935 | Avg:0.03 | Min:-0.06 | Max: 0.19
+    Cluster 495: Size:918 | Avg:0.03 | Min:-0.05 | Max: 0.19
+    Cluster 261: Size:1421 | Avg:0.03 | Min:-0.06 | Max: 0.16
+    Cluster 256: Size:1158 | Avg:0.03 | Min:-0.03 | Max: 0.13
+    Cluster 356: Size:1154 | Avg:0.03 | Min:-0.03 | Max: 0.14
+    Cluster 271: Size:1283 | Avg:0.03 | Min:-0.08 | Max: 0.15
+    Cluster 257: Size:830 | Avg:0.03 | Min:-0.07 | Max: 0.20
+    Cluster 584: Size:2089 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 563: Size:1811 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 504: Size:1017 | Avg:0.03 | Min:-0.03 | Max: 0.16
+    Cluster 169: Size:784 | Avg:0.03 | Min:-0.06 | Max: 0.21
+    Cluster 125: Size:1556 | Avg:0.03 | Min:-0.07 | Max: 0.15
+    Cluster 144: Size:1042 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 524: Size:1213 | Avg:0.03 | Min:-0.03 | Max: 0.14
+    Cluster 260: Size:1764 | Avg:0.03 | Min:-0.03 | Max: 0.14
+    Cluster 180: Size:775 | Avg:0.03 | Min:-0.04 | Max: 0.19
+    Cluster 213: Size:973 | Avg:0.03 | Min:-0.04 | Max: 0.17
+    Cluster 219: Size:1762 | Avg:0.03 | Min:-0.05 | Max: 0.15
+    Cluster 403: Size:982 | Avg:0.03 | Min:-0.05 | Max: 0.18
+    Cluster 5: Size:1235 | Avg:0.03 | Min:-0.03 | Max: 0.14
+    Cluster 11: Size:1412 | Avg:0.03 | Min:-0.03 | Max: 0.12
+    Cluster 389: Size:738 | Avg:0.03 | Min:-0.05 | Max: 0.18
+    Cluster 507: Size:1039 | Avg:0.03 | Min:-0.04 | Max: 0.15
+    Cluster 71: Size:1564 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 586: Size:140 | Avg:0.03 | Min:-0.23 | Max: 0.27
+    Cluster 550: Size:505 | Avg:0.03 | Min:-0.08 | Max: 0.19
+    Cluster 277: Size:863 | Avg:0.03 | Min:-0.08 | Max: 0.21
+    Cluster 358: Size:874 | Avg:0.03 | Min:-0.04 | Max: 0.18
+    Cluster 533: Size:872 | Avg:0.03 | Min:-0.05 | Max: 0.18
+    Cluster 136: Size:997 | Avg:0.03 | Min:-0.06 | Max: 0.17
+    Cluster 272: Size:1102 | Avg:0.03 | Min:-0.07 | Max: 0.16
+    Cluster 312: Size:2012 | Avg:0.03 | Min:-0.07 | Max: 0.13
+    Cluster 112: Size:846 | Avg:0.03 | Min:-0.09 | Max: 0.20
+    Cluster 322: Size:1246 | Avg:0.03 | Min:-0.06 | Max: 0.19
+    Cluster 491: Size:1656 | Avg:0.03 | Min:-0.04 | Max: 0.18
+    Cluster 532: Size:1107 | Avg:0.03 | Min:-0.05 | Max: 0.14
+    Cluster 94: Size:1528 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 161: Size:1066 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 566: Size:965 | Avg:0.03 | Min:-0.08 | Max: 0.20
+    Cluster 463: Size:1700 | Avg:0.03 | Min:-0.05 | Max: 0.13
+    Cluster 542: Size:956 | Avg:0.03 | Min:-0.10 | Max: 0.20
+    Cluster 519: Size:1014 | Avg:0.03 | Min:-0.05 | Max: 0.19
+    Cluster 41: Size:1445 | Avg:0.03 | Min:-0.07 | Max: 0.16
+    Cluster 2: Size:1816 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 296: Size:957 | Avg:0.03 | Min:-0.04 | Max: 0.16
+    Cluster 211: Size:1313 | Avg:0.03 | Min:-0.05 | Max: 0.15
+    Cluster 102: Size:1267 | Avg:0.03 | Min:-0.04 | Max: 0.13
+    Cluster 171: Size:1143 | Avg:0.03 | Min:-0.05 | Max: 0.14
+    Cluster 429: Size:2058 | Avg:0.03 | Min:-0.04 | Max: 0.15
+    Cluster 116: Size:1394 | Avg:0.03 | Min:-0.04 | Max: 0.16
+    Cluster 76: Size:1226 | Avg:0.03 | Min:-0.06 | Max: 0.15
+    Cluster 305: Size:1431 | Avg:0.03 | Min:-0.04 | Max: 0.16
+    Cluster 190: Size:781 | Avg:0.03 | Min:-0.09 | Max: 0.21
+    Cluster 351: Size:1364 | Avg:0.03 | Min:-0.05 | Max: 0.18
+    Cluster 127: Size:1126 | Avg:0.03 | Min:-0.06 | Max: 0.16
+    Cluster 428: Size:1545 | Avg:0.03 | Min:-0.04 | Max: 0.12
+    Cluster 452: Size:1234 | Avg:0.03 | Min:-0.04 | Max: 0.17
+    Cluster 472: Size:1080 | Avg:0.03 | Min:-0.07 | Max: 0.15
+    Cluster 265: Size:1483 | Avg:0.03 | Min:-0.04 | Max: 0.12
+    Cluster 515: Size:911 | Avg:0.03 | Min:-0.04 | Max: 0.16
+    Cluster 306: Size:872 | Avg:0.03 | Min:-0.05 | Max: 0.17
+    Cluster 517: Size:959 | Avg:0.03 | Min:-0.07 | Max: 0.18
+    Cluster 514: Size:1313 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 182: Size:986 | Avg:0.03 | Min:-0.07 | Max: 0.18
+    Cluster 282: Size:1478 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 48: Size:1548 | Avg:0.03 | Min:-0.07 | Max: 0.17
+    Cluster 249: Size:165 | Avg:0.03 | Min:-0.16 | Max: 0.22
+    Cluster 448: Size:1384 | Avg:0.03 | Min:-0.06 | Max: 0.19
+    Cluster 174: Size:842 | Avg:0.03 | Min:-0.07 | Max: 0.19
+    Cluster 250: Size:1010 | Avg:0.03 | Min:-0.06 | Max: 0.17
+    Cluster 288: Size:1666 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 225: Size:1062 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 80: Size:1569 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 310: Size:1028 | Avg:0.03 | Min:-0.10 | Max: 0.20
+    Cluster 476: Size:1241 | Avg:0.03 | Min:-0.06 | Max: 0.18
+    Cluster 176: Size:1099 | Avg:0.03 | Min:-0.03 | Max: 0.18
+    Cluster 471: Size:1167 | Avg:0.03 | Min:-0.06 | Max: 0.17
+    Cluster 77: Size:652 | Avg:0.03 | Min:-0.08 | Max: 0.19
+    Cluster 453: Size:95 | Avg:0.03 | Min:-0.21 | Max: 0.26
+    Cluster 371: Size:1563 | Avg:0.03 | Min:-0.08 | Max: 0.16
+    Cluster 146: Size:1393 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 380: Size:1553 | Avg:0.03 | Min:-0.04 | Max: 0.14
+    Cluster 299: Size:913 | Avg:0.03 | Min:-0.07 | Max: 0.18
+    Cluster 88: Size:864 | Avg:0.03 | Min:-0.07 | Max: 0.19
+    Cluster 516: Size:918 | Avg:0.03 | Min:-0.05 | Max: 0.17
+    Cluster 105: Size:1392 | Avg:0.03 | Min:-0.05 | Max: 0.18
+    Cluster 201: Size:946 | Avg:0.03 | Min:-0.05 | Max: 0.17
+    Cluster 194: Size:371 | Avg:0.03 | Min:-0.14 | Max: 0.14
+    Cluster 565: Size:1985 | Avg:0.03 | Min:-0.07 | Max: 0.16
+    Cluster 0: Size:1918 | Avg:0.03 | Min:-0.06 | Max: 0.14
+    Cluster 518: Size:757 | Avg:0.03 | Min:-0.05 | Max: 0.16
+    Cluster 384: Size:1224 | Avg:0.02 | Min:-0.04 | Max: 0.16
+    Cluster 576: Size:801 | Avg:0.02 | Min:-0.08 | Max: 0.19
+    Cluster 561: Size:1033 | Avg:0.02 | Min:-0.05 | Max: 0.17
+    Cluster 583: Size:1988 | Avg:0.02 | Min:-0.09 | Max: 0.15
+    Cluster 152: Size:1451 | Avg:0.02 | Min:-0.03 | Max: 0.11
+    Cluster 355: Size:1097 | Avg:0.02 | Min:-0.05 | Max: 0.14
+    Cluster 46: Size:1503 | Avg:0.02 | Min:-0.09 | Max: 0.15
+    Cluster 361: Size:1240 | Avg:0.02 | Min:-0.06 | Max: 0.14
+    Cluster 490: Size:1668 | Avg:0.02 | Min:-0.05 | Max: 0.15
+    Cluster 241: Size:522 | Avg:0.02 | Min:-0.06 | Max: 0.16
+    Cluster 110: Size:1298 | Avg:0.02 | Min:-0.07 | Max: 0.16
+    Cluster 360: Size:1488 | Avg:0.02 | Min:-0.05 | Max: 0.15
+    Cluster 189: Size:1085 | Avg:0.02 | Min:-0.06 | Max: 0.17
+    Cluster 150: Size:1159 | Avg:0.02 | Min:-0.05 | Max: 0.14
+    Cluster 55: Size:1641 | Avg:0.02 | Min:-0.05 | Max: 0.11
+    Cluster 585: Size:1267 | Avg:0.02 | Min:-0.05 | Max: 0.17
+    Cluster 9: Size:1444 | Avg:0.02 | Min:-0.06 | Max: 0.16
+    Cluster 539: Size:1055 | Avg:0.02 | Min:-0.06 | Max: 0.15
+    Cluster 259: Size:641 | Avg:0.02 | Min:-0.19 | Max: 0.23
+    Cluster 538: Size:1345 | Avg:0.02 | Min:-0.07 | Max: 0.16
+    Cluster 63: Size:1158 | Avg:0.02 | Min:-0.10 | Max: 0.15
+    Cluster 47: Size:1459 | Avg:0.02 | Min:-0.06 | Max: 0.17
+    Cluster 375: Size:1498 | Avg:0.02 | Min:-0.04 | Max: 0.12
+    Cluster 513: Size:1054 | Avg:0.02 | Min:-0.06 | Max: 0.16
+    Cluster 79: Size:1606 | Avg:0.02 | Min:-0.09 | Max: 0.16
+    Cluster 475: Size:1445 | Avg:0.02 | Min:-0.04 | Max: 0.14
+    Cluster 108: Size:968 | Avg:0.02 | Min:-0.09 | Max: 0.15
+    Cluster 223: Size:1019 | Avg:0.02 | Min:-0.09 | Max: 0.20
+    Cluster 284: Size:2351 | Avg:0.02 | Min:-0.10 | Max: 0.14
+    Cluster 556: Size:811 | Avg:0.02 | Min:-0.04 | Max: 0.13
+    Cluster 554: Size:911 | Avg:0.02 | Min:-0.12 | Max: 0.19
+    Cluster 248: Size:824 | Avg:0.02 | Min:-0.05 | Max: 0.14
+    Cluster 270: Size:436 | Avg:0.02 | Min:-0.15 | Max: 0.22
+    Cluster 391: Size:836 | Avg:0.02 | Min:-0.05 | Max: 0.14
+    Cluster 506: Size:1451 | Avg:0.02 | Min:-0.06 | Max: 0.15
+    Cluster 197: Size:220 | Avg:0.02 | Min:-0.19 | Max: 0.25
+    Cluster 267: Size:1386 | Avg:0.02 | Min:-0.05 | Max: 0.15
+    Cluster 107: Size:1399 | Avg:0.02 | Min:-0.07 | Max: 0.17
+    Cluster 530: Size:682 | Avg:0.02 | Min:-0.07 | Max: 0.16
+    Cluster 446: Size:1195 | Avg:0.02 | Min:-0.08 | Max: 0.18
+    Cluster 496: Size:1098 | Avg:0.02 | Min:-0.11 | Max: 0.16
+    Cluster 587: Size:657 | Avg:0.02 | Min:-0.07 | Max: 0.15
+    Cluster 266: Size:1174 | Avg:0.02 | Min:-0.06 | Max: 0.14
+    Cluster 386: Size:811 | Avg:0.02 | Min:-0.05 | Max: 0.11
+    Cluster 376: Size:894 | Avg:0.02 | Min:-0.08 | Max: 0.20
+    Cluster 320: Size:1533 | Avg:0.02 | Min:-0.05 | Max: 0.14
+    Cluster 175: Size:1003 | Avg:0.02 | Min:-0.05 | Max: 0.13
+    Cluster 139: Size:1169 | Avg:0.02 | Min:-0.05 | Max: 0.12
+    Cluster 101: Size:1285 | Avg:0.02 | Min:-0.10 | Max: 0.16
+    Cluster 316: Size:2316 | Avg:0.02 | Min:-0.08 | Max: 0.13
+    Cluster 520: Size:1862 | Avg:0.02 | Min:-0.08 | Max: 0.15
+    Cluster 521: Size:825 | Avg:0.02 | Min:-0.07 | Max: 0.18
+    Cluster 434: Size:1169 | Avg:0.02 | Min:-0.09 | Max: 0.16
+    Cluster 30: Size:1464 | Avg:0.02 | Min:-0.06 | Max: 0.14
+    Cluster 95: Size:699 | Avg:0.02 | Min:-0.10 | Max: 0.18
+    Cluster 229: Size:1132 | Avg:0.02 | Min:-0.06 | Max: 0.12
+    Cluster 535: Size:1101 | Avg:0.02 | Min:-0.08 | Max: 0.16
+    Cluster 179: Size:1077 | Avg:0.02 | Min:-0.08 | Max: 0.18
+    Cluster 573: Size:960 | Avg:0.02 | Min:-0.07 | Max: 0.16
+    Cluster 439: Size:1316 | Avg:0.01 | Min:-0.05 | Max: 0.14
+    Cluster 243: Size:1643 | Avg:0.01 | Min:-0.08 | Max: 0.16
+    Cluster 35: Size:1977 | Avg:0.01 | Min:-0.09 | Max: 0.15
+    Cluster 25: Size:662 | Avg:0.01 | Min:-0.05 | Max: 0.12
+    Cluster 200: Size:1301 | Avg:0.01 | Min:-0.10 | Max: 0.17
+    Cluster 32: Size:1597 | Avg:0.01 | Min:-0.04 | Max: 0.11
+    Cluster 326: Size:281 | Avg:0.01 | Min:-0.20 | Max: 0.24
+    Cluster 318: Size:1191 | Avg:0.01 | Min:-0.07 | Max: 0.18
+    Cluster 237: Size:1363 | Avg:0.01 | Min:-0.10 | Max: 0.12
+    Cluster 574: Size:872 | Avg:0.01 | Min:-0.07 | Max: 0.17
+    Cluster 438: Size:734 | Avg:0.01 | Min:-0.07 | Max: 0.16
+    Cluster 291: Size:926 | Avg:0.01 | Min:-0.06 | Max: 0.14
+    Cluster 193: Size:766 | Avg:0.01 | Min:-0.08 | Max: 0.17
+    Cluster 393: Size:921 | Avg:0.01 | Min:-0.08 | Max: 0.18
+    Cluster 545: Size:1051 | Avg:0.01 | Min:-0.11 | Max: 0.15
+    Cluster 430: Size:1016 | Avg:0.01 | Min:-0.08 | Max: 0.19
+    Cluster 133: Size:1367 | Avg:0.01 | Min:-0.08 | Max: 0.13
+    Cluster 254: Size:740 | Avg:0.01 | Min:-0.07 | Max: 0.17
+    Cluster 455: Size:895 | Avg:0.01 | Min:-0.11 | Max: 0.19
+    Cluster 309: Size:1489 | Avg:0.01 | Min:-0.05 | Max: 0.12
+    Cluster 178: Size:1154 | Avg:0.01 | Min:-0.06 | Max: 0.15
+    Cluster 529: Size:1258 | Avg:0.01 | Min:-0.06 | Max: 0.15
+    Cluster 302: Size:1255 | Avg:0.01 | Min:-0.08 | Max: 0.11
+    Cluster 279: Size:1088 | Avg:0.01 | Min:-0.09 | Max: 0.15
+    Cluster 591: Size:1086 | Avg:0.01 | Min:-0.08 | Max: 0.16
+    Cluster 522: Size:1447 | Avg:0.01 | Min:-0.11 | Max: 0.14
+    Cluster 394: Size:770 | Avg:0.01 | Min:-0.06 | Max: 0.13
+    Cluster 398: Size:1317 | Avg:0.01 | Min:-0.06 | Max: 0.12
+    Cluster 325: Size:1140 | Avg:0.01 | Min:-0.09 | Max: 0.14
+    Cluster 344: Size:845 | Avg:0.01 | Min:-0.09 | Max: 0.17
+    Cluster 594: Size:1490 | Avg:0.01 | Min:-0.05 | Max: 0.10
+    Cluster 167: Size:216 | Avg:0.01 | Min:-0.22 | Max: 0.23
+    Cluster 327: Size:949 | Avg:0.01 | Min:-0.06 | Max: 0.13
+    Cluster 480: Size:1181 | Avg:0.01 | Min:-0.05 | Max: 0.12
+    Cluster 119: Size:1153 | Avg:0.01 | Min:-0.07 | Max: 0.13
+    Cluster 499: Size:896 | Avg:0.01 | Min:-0.07 | Max: 0.14
+    Cluster 280: Size:717 | Avg:0.01 | Min:-0.10 | Max: 0.17
+    Cluster 168: Size:1111 | Avg:0.01 | Min:-0.08 | Max: 0.15
+    Cluster 98: Size:1236 | Avg:0.01 | Min:-0.12 | Max: 0.20
+    Cluster 122: Size:831 | Avg:0.01 | Min:-0.07 | Max: 0.13
+    Cluster 562: Size:806 | Avg:0.01 | Min:-0.11 | Max: 0.15
+    Cluster 549: Size:448 | Avg:0.01 | Min:-0.07 | Max: 0.13
+    Cluster 57: Size:749 | Avg:0.01 | Min:-0.10 | Max: 0.17
+    Cluster 395: Size:917 | Avg:0.01 | Min:-0.08 | Max: 0.15
+    Cluster 365: Size:303 | Avg:0.01 | Min:-0.20 | Max: 0.18
+    Cluster 149: Size:973 | Avg:0.00 | Min:-0.08 | Max: 0.18
+    Cluster 383: Size:1119 | Avg:0.00 | Min:-0.06 | Max: 0.11
+    Cluster 245: Size:964 | Avg:0.00 | Min:-0.08 | Max: 0.13
+    Cluster 20: Size:838 | Avg:0.00 | Min:-0.10 | Max: 0.15
+    Cluster 598: Size:1585 | Avg:0.00 | Min:-0.11 | Max: 0.13
+    Cluster 405: Size:1627 | Avg:0.00 | Min:-0.07 | Max: 0.09
+    Cluster 198: Size:1214 | Avg:0.00 | Min:-0.06 | Max: 0.13
+    Cluster 482: Size:1168 | Avg:0.00 | Min:-0.08 | Max: 0.15
+    Cluster 54: Size:1412 | Avg:0.00 | Min:-0.10 | Max: 0.13
+    Cluster 373: Size:1274 | Avg:0.00 | Min:-0.08 | Max: 0.15
+    Cluster 84: Size:882 | Avg:0.00 | Min:-0.08 | Max: 0.12
+    Cluster 500: Size:1101 | Avg:0.00 | Min:-0.08 | Max: 0.14
+    Cluster 437: Size:879 | Avg:-0.00 | Min:-0.09 | Max: 0.13
+    Cluster 432: Size:691 | Avg:-0.00 | Min:-0.07 | Max: 0.12
+    Cluster 91: Size:390 | Avg:-0.00 | Min:-0.17 | Max: 0.19
+    Cluster 334: Size:678 | Avg:-0.00 | Min:-0.08 | Max: 0.13
+    Cluster 166: Size:1234 | Avg:-0.00 | Min:-0.08 | Max: 0.13
+    Cluster 97: Size:1074 | Avg:-0.00 | Min:-0.08 | Max: 0.11
+    Cluster 487: Size:1623 | Avg:-0.00 | Min:-0.11 | Max: 0.14
+    Cluster 406: Size:930 | Avg:-0.00 | Min:-0.10 | Max: 0.16
+    Cluster 381: Size:842 | Avg:-0.00 | Min:-0.11 | Max: 0.15
+    Cluster 103: Size:1001 | Avg:-0.00 | Min:-0.08 | Max: 0.16
+    Cluster 469: Size:718 | Avg:-0.00 | Min:-0.13 | Max: 0.19
+    Cluster 423: Size:713 | Avg:-0.00 | Min:-0.08 | Max: 0.13
+    Cluster 407: Size:1132 | Avg:-0.01 | Min:-0.09 | Max: 0.12
+    Cluster 292: Size:667 | Avg:-0.01 | Min:-0.09 | Max: 0.15
+    Cluster 555: Size:361 | Avg:-0.01 | Min:-0.08 | Max: 0.13
+    Cluster 286: Size:1143 | Avg:-0.01 | Min:-0.12 | Max: 0.13
+    Cluster 449: Size:624 | Avg:-0.01 | Min:-0.09 | Max: 0.14
+    Cluster 592: Size:839 | Avg:-0.01 | Min:-0.12 | Max: 0.15
+    Cluster 541: Size:1026 | Avg:-0.01 | Min:-0.11 | Max: 0.19
+    Cluster 443: Size:325 | Avg:-0.01 | Min:-0.22 | Max: 0.25
+    Cluster 123: Size:1089 | Avg:-0.01 | Min:-0.32 | Max: 0.12
+    Cluster 307: Size:590 | Avg:-0.01 | Min:-0.23 | Max: 0.19
+    Cluster 567: Size:810 | Avg:-0.01 | Min:-0.12 | Max: 0.14
+    Cluster 109: Size:264 | Avg:-0.01 | Min:-0.26 | Max: 0.22
+    Cluster 450: Size:1215 | Avg:-0.01 | Min:-0.16 | Max: 0.13
+    Cluster 242: Size:986 | Avg:-0.01 | Min:-0.15 | Max: 0.14
+    Cluster 1: Size:927 | Avg:-0.01 | Min:-0.10 | Max: 0.10
+    Cluster 315: Size:739 | Avg:-0.01 | Min:-0.13 | Max: 0.18
+    Cluster 508: Size:824 | Avg:-0.01 | Min:-0.11 | Max: 0.11
+    Cluster 236: Size:686 | Avg:-0.02 | Min:-0.12 | Max: 0.16
+    Cluster 402: Size:759 | Avg:-0.02 | Min:-0.10 | Max: 0.12
+    Cluster 484: Size:211 | Avg:-0.02 | Min:-0.16 | Max: 0.18
+    Cluster 367: Size:139 | Avg:-0.02 | Min:-0.27 | Max: 0.24
+    Cluster 118: Size:851 | Avg:-0.02 | Min:-0.09 | Max: 0.10
+    Cluster 258: Size:910 | Avg:-0.02 | Min:-0.11 | Max: 0.12
+    Cluster 59: Size:660 | Avg:-0.02 | Min:-0.22 | Max: 0.12
+    Cluster 581: Size:262 | Avg:-0.02 | Min:-0.25 | Max: 0.22
+    Cluster 239: Size:499 | Avg:-0.02 | Min:-0.25 | Max: 0.13
+    Cluster 148: Size:362 | Avg:-0.02 | Min:-0.21 | Max: 0.15
+    Cluster 415: Size:595 | Avg:-0.02 | Min:-0.25 | Max: 0.22
+    Cluster 214: Size:245 | Avg:-0.03 | Min:-0.12 | Max: 0.16
+    Cluster 329: Size:784 | Avg:-0.03 | Min:-0.11 | Max: 0.11
+    Cluster 570: Size:185 | Avg:-0.03 | Min:-0.26 | Max: 0.18
+    Cluster 16: Size:173 | Avg:-0.03 | Min:-0.16 | Max: 0.13
+    Cluster 479: Size:625 | Avg:-0.03 | Min:-0.24 | Max: 0.18
+    Cluster 221: Size:938 | Avg:-0.03 | Min:-0.15 | Max: 0.13
+    Cluster 399: Size:662 | Avg:-0.03 | Min:-0.12 | Max: 0.12
+    Cluster 308: Size:591 | Avg:-0.03 | Min:-0.17 | Max: 0.17
+    Cluster 336: Size:597 | Avg:-0.03 | Min:-0.25 | Max: 0.18
+    Cluster 323: Size:776 | Avg:-0.03 | Min:-0.14 | Max: 0.14
+    Cluster 427: Size:688 | Avg:-0.03 | Min:-0.12 | Max: 0.12
+    Cluster 70: Size:388 | Avg:-0.03 | Min:-0.24 | Max: 0.16
+    Cluster 492: Size:1048 | Avg:-0.03 | Min:-0.12 | Max: 0.12
+    Cluster 85: Size:220 | Avg:-0.04 | Min:-0.25 | Max: 0.21
+    Cluster 465: Size:172 | Avg:-0.04 | Min:-0.27 | Max: 0.15
+    Cluster 274: Size:313 | Avg:-0.04 | Min:-0.25 | Max: 0.20
+    Cluster 275: Size:321 | Avg:-0.04 | Min:-0.23 | Max: 0.14
+    Cluster 328: Size:360 | Avg:-0.04 | Min:-0.13 | Max: 0.12
+    Cluster 87: Size:190 | Avg:-0.04 | Min:-0.25 | Max: 0.21
+    Cluster 67: Size:573 | Avg:-0.04 | Min:-0.24 | Max: 0.14
+    Cluster 205: Size:799 | Avg:-0.04 | Min:-0.25 | Max: 0.19
+    Cluster 212: Size:905 | Avg:-0.04 | Min:-0.12 | Max: 0.09
+    Cluster 143: Size:636 | Avg:-0.05 | Min:-0.15 | Max: 0.11
+    Cluster 321: Size:445 | Avg:-0.05 | Min:-0.24 | Max: 0.17
+    Cluster 147: Size:594 | Avg:-0.05 | Min:-0.23 | Max: 0.15
+    Cluster 470: Size:182 | Avg:-0.05 | Min:-0.22 | Max: 0.15
+    Cluster 252: Size:437 | Avg:-0.05 | Min:-0.21 | Max: 0.15
+    Cluster 419: Size:313 | Avg:-0.05 | Min:-0.24 | Max: 0.15
+    Cluster 509: Size:603 | Avg:-0.05 | Min:-0.26 | Max: 0.16
+    Cluster 353: Size:351 | Avg:-0.05 | Min:-0.29 | Max: 0.19
+    Cluster 164: Size:210 | Avg:-0.05 | Min:-0.18 | Max: 0.10
+    Cluster 177: Size:435 | Avg:-0.05 | Min:-0.27 | Max: 0.16
+    Cluster 44: Size:907 | Avg:-0.05 | Min:-0.16 | Max: 0.10
+    Cluster 39: Size:639 | Avg:-0.06 | Min:-0.26 | Max: 0.11
+    Cluster 558: Size:354 | Avg:-0.06 | Min:-0.20 | Max: 0.09
+    Cluster 120: Size:649 | Avg:-0.06 | Min:-0.17 | Max: 0.12
+    Cluster 106: Size:137 | Avg:-0.06 | Min:-0.23 | Max: 0.12
+    Cluster 332: Size:309 | Avg:-0.06 | Min:-0.34 | Max: 0.17
+    Cluster 575: Size:269 | Avg:-0.06 | Min:-0.32 | Max: 0.15
+    Cluster 599: Size:389 | Avg:-0.06 | Min:-0.23 | Max: 0.14
+    Cluster 338: Size:272 | Avg:-0.06 | Min:-0.23 | Max: 0.11
+    Cluster 65: Size:425 | Avg:-0.06 | Min:-0.27 | Max: 0.13
+    Cluster 222: Size:643 | Avg:-0.06 | Min:-0.29 | Max: 0.13
+    Cluster 444: Size:297 | Avg:-0.06 | Min:-0.22 | Max: 0.19
+    Cluster 140: Size:378 | Avg:-0.06 | Min:-0.26 | Max: 0.18
+    Cluster 445: Size:138 | Avg:-0.06 | Min:-0.28 | Max: 0.20
+    Cluster 340: Size:277 | Avg:-0.07 | Min:-0.22 | Max: 0.10
+    Cluster 157: Size:279 | Avg:-0.07 | Min:-0.27 | Max: 0.19
+    Cluster 216: Size:335 | Avg:-0.07 | Min:-0.29 | Max: 0.10
+    Cluster 45: Size:277 | Avg:-0.07 | Min:-0.28 | Max: 0.15
+    Cluster 377: Size:273 | Avg:-0.07 | Min:-0.26 | Max: 0.18
+    Cluster 597: Size:381 | Avg:-0.07 | Min:-0.24 | Max: 0.12
+    Cluster 413: Size:376 | Avg:-0.07 | Min:-0.26 | Max: 0.17
+    Cluster 571: Size:381 | Avg:-0.07 | Min:-0.24 | Max: 0.18
+    Cluster 33: Size:328 | Avg:-0.07 | Min:-0.31 | Max: 0.13
+    Cluster 206: Size:187 | Avg:-0.07 | Min:-0.27 | Max: 0.09
+    Cluster 343: Size:460 | Avg:-0.08 | Min:-0.28 | Max: 0.11
+    Cluster 138: Size:537 | Avg:-0.08 | Min:-0.20 | Max: 0.10
+    Cluster 511: Size:133 | Avg:-0.08 | Min:-0.28 | Max: 0.13
+    Cluster 552: Size:348 | Avg:-0.08 | Min:-0.27 | Max: 0.09
+    Cluster 218: Size:190 | Avg:-0.08 | Min:-0.24 | Max: 0.10
+    Cluster 512: Size:193 | Avg:-0.08 | Min:-0.27 | Max: 0.11
+    Cluster 364: Size:448 | Avg:-0.09 | Min:-0.24 | Max: 0.07
+    Cluster 354: Size:475 | Avg:-0.09 | Min:-0.25 | Max: 0.07
+    Cluster 596: Size:448 | Avg:-0.09 | Min:-0.28 | Max: 0.09
+    Cluster 129: Size:736 | Avg:-0.09 | Min:-0.27 | Max: 0.07
+    Cluster 426: Size:430 | Avg:-0.09 | Min:-0.24 | Max: 0.07
+    Cluster 442: Size:283 | Avg:-0.09 | Min:-0.27 | Max: 0.12
+    Cluster 159: Size:332 | Avg:-0.09 | Min:-0.27 | Max: 0.09
+    Cluster 135: Size:407 | Avg:-0.09 | Min:-0.29 | Max: 0.08
+    Cluster 93: Size:565 | Avg:-0.09 | Min:-0.29 | Max: 0.11
+    Cluster 590: Size:205 | Avg:-0.10 | Min:-0.31 | Max: 0.12
+    Cluster 458: Size:152 | Avg:-0.10 | Min:-0.32 | Max: 0.15
+    Cluster 195: Size:203 | Avg:-0.10 | Min:-0.35 | Max: 0.11
+    Cluster 333: Size:384 | Avg:-0.10 | Min:-0.30 | Max: 0.10
+    Cluster 8: Size:534 | Avg:-0.10 | Min:-0.26 | Max: 0.07
+    Cluster 551: Size:515 | Avg:-0.10 | Min:-0.32 | Max: 0.06
+    Cluster 483: Size:269 | Avg:-0.10 | Min:-0.30 | Max: 0.12
+    Cluster 544: Size:140 | Avg:-0.10 | Min:-0.27 | Max: 0.12
+    Cluster 293: Size:623 | Avg:-0.10 | Min:-0.26 | Max: 0.09
+    Cluster 485: Size:258 | Avg:-0.10 | Min:-0.30 | Max: 0.08
+    Cluster 253: Size:269 | Avg:-0.11 | Min:-0.23 | Max: 0.08
+    Cluster 589: Size:499 | Avg:-0.11 | Min:-0.28 | Max: 0.07
+    Cluster 531: Size:607 | Avg:-0.11 | Min:-0.31 | Max: 0.07
+    Cluster 497: Size:344 | Avg:-0.11 | Min:-0.29 | Max: 0.08
+    Cluster 392: Size:373 | Avg:-0.11 | Min:-0.25 | Max: 0.06
+    Cluster 185: Size:194 | Avg:-0.11 | Min:-0.28 | Max: 0.07
+    Cluster 22: Size:638 | Avg:-0.11 | Min:-0.28 | Max: 0.05
+    Cluster 593: Size:371 | Avg:-0.11 | Min:-0.32 | Max: 0.07
+    Cluster 104: Size:212 | Avg:-0.11 | Min:-0.29 | Max: 0.07
+    Cluster 163: Size:259 | Avg:-0.11 | Min:-0.27 | Max: 0.07
+    Cluster 387: Size:224 | Avg:-0.11 | Min:-0.24 | Max: 0.12
+    Cluster 28: Size:469 | Avg:-0.11 | Min:-0.27 | Max: 0.11
+    Cluster 232: Size:250 | Avg:-0.11 | Min:-0.32 | Max: 0.07
+    Cluster 349: Size:455 | Avg:-0.11 | Min:-0.25 | Max: 0.08
+    Cluster 481: Size:158 | Avg:-0.12 | Min:-0.27 | Max: 0.11
+    Cluster 528: Size:141 | Avg:-0.12 | Min:-0.28 | Max: 0.05
+    Cluster 421: Size:497 | Avg:-0.12 | Min:-0.28 | Max: 0.08
+    Cluster 235: Size:342 | Avg:-0.12 | Min:-0.28 | Max: 0.09
+    Cluster 199: Size:113 | Avg:-0.12 | Min:-0.25 | Max: 0.06
+    Cluster 19: Size:262 | Avg:-0.12 | Min:-0.30 | Max: 0.09
+    Cluster 342: Size:543 | Avg:-0.12 | Min:-0.29 | Max: 0.06
+    Cluster 572: Size:512 | Avg:-0.12 | Min:-0.27 | Max: 0.07
+    Cluster 262: Size:3 | Avg:-0.12 | Min:-0.22 | Max: -0.04
+    Cluster 347: Size:398 | Avg:-0.13 | Min:-0.29 | Max: 0.07
+    Cluster 202: Size:868 | Avg:-0.13 | Min:-0.33 | Max: 0.07
+2022-10-02 08:25:52 Dumping trained model to pickle file... results_model.pkl
+2022-10-02 08:25:52 Most representative terms per cluster (based on centroids):
+Cluster 0: design mechatronic modeling software specification
+Cluster 1: software development engineering tools cim
+Cluster 2: residuals variance covariance approximate estimators
+Cluster 3: watermark image watermarking dct watermarks
+Cluster 4: biological biomolecules biochemical enzymes proteins
+Cluster 5: robot grasping robotu2019s haptic manipulation
+Cluster 6: business organizations organisation enterprise organization
+Cluster 7: execution runtime reconfiguration statically io
+Cluster 8: nan integrated advanced interfacing embedded
+Cluster 9: discipline scientific contemporary concepts foundational
+Cluster 10: stator rotor torque ipmsm pmsm
+Cluster 11: partition moreover heuristic algorithm sequential
+Cluster 12: infrastructure middleware virtualized cloud virtualization
+Cluster 13: forecasting forecast prediction model arima
+Cluster 14: circuit parasitics interconnect transistor latch
+Cluster 15: clinicians healthcare caregivers hcp care
+Cluster 16: tree trees subtrees subtree graph
+Cluster 17: clustering partition feature similarity attribute
+Cluster 18: ontology semantic ontologies ontological schema
+Cluster 19: radar microwave multibeam multistatic terahertz
+Cluster 20: clinical educational practice recordkeeping healthcare
+Cluster 21: dose dosimetric isocenter epid imrt
+Cluster 22: development perfecting methodical researching didactic
+Cluster 23: parametrization formulation approximate linear adjoint
+Cluster 24: schema rdf xml query schemas
+Cluster 25: hydrodynamic atmospheric turbulence subsurface mesoscale
+Cluster 26: monitoring equipment wsn scada equipments
+Cluster 27: qos scheduling network reconfiguration routing
+Cluster 28: power shipboard electric electrical traction
+Cluster 29: prognostic covariates covariate outcome statistical
+Cluster 30: ontological concepts conceptual argumentation context
+Cluster 31: product manufacturing customization enterprise business
+Cluster 32: geometric shape feature vectors subspace
+Cluster 33: testing test evaluation analysis validation
+Cluster 34: optimization configuration formulation parameterization geometric
+Cluster 35: appropriateness descriptive items outcome item
+Cluster 36: controller control decoupling actuator servo
+Cluster 37: supplier inventory suppliers logistics procurement
+Cluster 38: fault faults reconfiguration faulty testability
+Cluster 39: development design architecting mbse engineering
+Cluster 40: organisation organizations organizational organisations business
+Cluster 41: circuit resistor resistors capacitances impedances
+Cluster 42: perceptual featural auditory stimulus visual
+Cluster 43: chapter fundamentals introduction preface publisher
+Cluster 44: research conceptual methodological methodical review
+Cluster 45: learning machine classification unsupervised mining
+Cluster 46: users usersu2019 social consumers websites
+Cluster 47: stiffness torsional shaft guideway friction
+Cluster 48: teachers educational students teacher teaching
+Cluster 49: und zur ein zu eine
+2022-10-02 08:25:52 Feeding back cluster numbers to documents data...
+                                        pub  cluster
+0  https://semopenalex.org/work/W2083927153      325
+1  https://semopenalex.org/work/W2014980529      101
+2  https://semopenalex.org/work/W2152560313      517
+3  https://semopenalex.org/work/W2030677354      522
+4  https://semopenalex.org/work/W2009069410      110
+2022-10-02 08:25:52 Dumping cluster data to CSV file... results_clusters.csv
+2022-10-02 08:25:54 Script took 11318.488306045532 seconds to run
