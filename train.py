@@ -11,8 +11,7 @@ import os
 import datetime
 import time
 import random
-import re
-import string
+
 import nltk
 import numpy as np
 import pandas as pd
@@ -23,6 +22,8 @@ from nltk.corpus import stopwords
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.metrics import silhouette_samples, silhouette_score
 from joblib import dump, load
+
+import preprocess
 
 def log(message):
     now = datetime.datetime.now()
@@ -39,29 +40,7 @@ random.seed(SEED)
 os.environ["PYTHONHASHSEED"] = str(SEED)
 np.random.seed(SEED)
 
-def clean_text(text, tokenizer, stopwords):
-    """Pre-process text and generate tokens
 
-    Args:
-        text: Text to tokenize.
-
-    Returns:
-        Tokenized text.
-    """
-    text = str(text).lower()  # Lowercase words
-    text = re.sub(r"\[(.*?)\]", "", text)  # Remove [+XYZ chars] in content
-    text = re.sub(r"\s+", " ", text)  # Remove multiple spaces in content
-    text = re.sub(r"\w+…|…", "", text)  # Remove ellipsis (and last word)
-    text = re.sub(r"(?<=\w)-(?=\w)", " ", text)  # Replace dash between words
-    text = re.sub(
-        f"[{re.escape(string.punctuation)}]", "", text
-    )  # Remove punctuation
-
-    tokens = tokenizer(text)  # Get tokens from text
-    tokens = [t for t in tokens if not t in stopwords]  # Remove stopwords
-    tokens = ["" if t.isdigit() else t for t in tokens]  # Remove digits
-    tokens = [t for t in tokens if len(t) > 1]  # Remove short tokens
-    return tokens
 
 # read csv file
 log('Reading CSV file...')
@@ -77,7 +56,7 @@ for col in text_columns:
     df[col] = df[col].astype(str)
 
 df["text"] = df[text_columns].apply(lambda x: ". ".join(x), axis=1)
-df["tokens"] = df["text"].map(lambda x: clean_text(x, word_tokenize, custom_stopwords))
+df["tokens"] = df["text"].map(lambda x: preprocess.clean_text(x, word_tokenize, custom_stopwords))
 
 docs = df["text"].values
 tokenized_docs = df["tokens"].values
@@ -94,36 +73,8 @@ model.wv.most_similar("quality")
 
 log('Dumping word2vec model to pickle file... ' + PICKLE_W2V)
 dump(model, PICKLE_W2V)
-exit()
 
-def vectorize(list_of_docs, model):
-    """Generate vectors for list of documents using a Word Embedding
 
-    Args:
-        list_of_docs: List of documents
-        model: Gensim's Word Embedding
-
-    Returns:
-        List of document vectors
-    """
-    features = []
-
-    for tokens in list_of_docs:
-        zero_vector = np.zeros(model.vector_size)
-        vectors = []
-        for token in tokens:
-            if token in model.wv:
-                try:
-                    vectors.append(model.wv[token])
-                except KeyError:
-                    continue
-        if vectors:
-            vectors = np.asarray(vectors)
-            avg_vec = vectors.mean(axis=0)
-            features.append(avg_vec)
-        else:
-            features.append(zero_vector)
-    return features
 
 log('Vectorizing documents...')
 vectorized_docs = vectorize(tokenized_docs, model=model)
