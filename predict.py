@@ -13,7 +13,8 @@ def make_prediction(data):
     # df = pd.read_json('test.json')
     text_columns = ["title", "abstract"]
 
-    df = pd.DataFrame.from_dict(data, orient="index", columns=text_columns)
+    df = pd.DataFrame.from_dict(data) # , orient="index", columns=text_columns
+    df.columns=text_columns
 
     custom_stopwords = set(stopwords.words("english") + ["news", "new", "top"])
 
