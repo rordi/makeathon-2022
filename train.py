@@ -1,6 +1,6 @@
 # adapted from https://dylancastillo.co/nlp-snippets-cluster-documents-using-word2vec/#clean-and-tokenize-data
 
-FILE = './combined_deduplicated_test.csv'
+FILE = './combined_deduplicated.csv'
 PICKLE = 'results_model.pkl'
 PICKLE_W2V = 'results_w2v_model.pkl'
 CLUSTERDATA = 'results_clusters.csv'
@@ -94,7 +94,6 @@ model.wv.most_similar("quality")
 
 log('Dumping word2vec model to pickle file... ' + PICKLE_W2V)
 dump(model, PICKLE_W2V)
-exit()
 
 def vectorize(list_of_docs, model):
     """Generate vectors for list of documents using a Word Embedding
